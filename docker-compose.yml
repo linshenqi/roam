@@ -1,0 +1,16 @@
+version: '2'
+services:
+  vpn:
+    image: linshenqi/roam
+    ports:
+      - "500:500/udp"
+      - "4500:4500/udp"
+    environment:
+      - VPN_IPSEC_PSK=33teLw5DkU1aRJpT
+      - VPN_USER=na
+      - VPN_PASSWORD=Ttgp8pOe8s3JpzxhI9BGoFn4fNv0LK6H
+    volumes:
+      - /lib/modules:/lib/modules:ro
+      - /data/roam/vpn:/etc/ppp
+    restart: always
+    privileged: true
